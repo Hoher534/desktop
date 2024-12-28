@@ -1,2 +1,4 @@
 # desktop
-resolvendo conflito de arquivos edtidos remotamente
+resolvendo conflito de arquivos editados remotamente...
+# linha escrita no editor code.
+
