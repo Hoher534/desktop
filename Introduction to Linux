@@ -1,0 +1,98 @@
+man ... manual de comandos executáveis.
+tldr ... lista de ajuda demosntrando a sintaxe de funções e argumentos.
+ls ... lista arquivos dentro do diretorio
+ls -al .. lista todos os valores e permissões relacionadas ao arquivo.
+mkdir -p ... cria subpastas aninhadas.
+open ... abre o diretorio ou arquivo apontado
+mv ... mv test new_test  ... foi movido para new_test e renomeado ao mesmo tempo.
+cp .. copia arquivos cp -r copia recursivamente...
+find  ... busca arquivos no sistema...
+find . -name '*.js' ... Encontre todos os arquivos na árvore atual que tenham a .jsextensão e imprima o caminho relativo de cada arquivo correspondente:
+find . -type d -name src |less ... deixa o ambiente de rolagem disponível.
+find . -type d -name node_modules -or -name public
+Você também pode excluir um caminho usando -not -path
+find . -type d -name '*.md' -not -path 'node_modules/*'
+Você pode pesquisar arquivos que tenham mais de 100 caracteres (bytes):
+find . -type f -size +100c
+Um link físico é criado usando a seguinte sintaxe:
+ln <original> <link>
+ln arq.txt new arq.txt	 
+Um link suave 
+ln -s arq1.txt
+Você pode usar a -uopção para exibir apenas linhas não duplicadas:
+sort arq.txt |uniq -u
+diff processará os arquivos e lhe informará qual é a diferença.
+Usar a -y opção irá comparar os 2 arquivos linha por linha:
+No entanto, a -u opção será mais familiar para você, porque é a mesma usada pelo sistema de controle de versão do Git para exibir diferenças entre versões:
+diff -u arq1.txt arq2.txt
+Comparar diretórios funciona da mesma forma. Você deve usar a -ropção para comparar recursivamente (indo para subdiretórios):
+testing ls dir1 testind ls dir2 testing diff -u dir1 dir2
+Caso você esteja interessado em quais arquivos diferem, em vez do conteúdo, use as opções r e :q 
+testing diff -rq dir1 dir2  
+ O echo comando faz uma tarefa simples: ele imprime na saída o argumento passado a ele.
+echo "hello" imprimirá hello no terminal.
+echo "hello" >> output.txt... Podemos anexar a saída a um arquivo: 
+echo "The path variable is $PATH"... Podemos interpolar variáveis ​​de ambiente:
+Tenha cuidado, pois caracteres especiais precisam ser escapados com uma barra invertida \. $Por exemplo:
+echo o custo de R\$5 ... o custo de R$5
+echo * ecoa  a pasta local
+Podemos ecoar os arquivos na pasta atual que começam com a letra o:
+echo o*
+Você pode imprimir o caminho da sua pasta pessoal:
+echo ~
+Você também pode executar comandos e imprimir o resultado na saída padrão (ou em um arquivo, como você viu):
+echo $(ls -al)
+Note que o espaço em branco não é preservado por padrão. Você precisa envolver o comando em aspas duplas para fazer isso:
+echo "$(ls -al)"
+ps
+Seu computador executa vários processos diferentes o tempo todo.
+Você pode inspecioná-los todos usando o pscomando:
+Esses são apenas os comandos atribuídos ao usuário atual. Para listar todos os processos, precisamos passar algumas opções para ps.
+ps ax 
+Como você pode ver, os comandos mais longos são cortados. Use o comando ps axww para continuar a listagem de comandos em uma nova linha em vez de cortá-la:
+Você pode procurar por um processo específico combinando grepcom um pipe, assim:
+ps axww | grep "Visual Studio Code"
+As colunas retornadas por psrepresentam algumas informações importantes.
+
+A primeira informação é PIDo ID do processo. Isso é essencial quando você quer referenciar esse processo em outro comando, por exemplo, para matá-lo.
+
+Então temos TTque nos diz o ID do terminal usado.
+
+Então STATnos conta o estado do processo:
+
+Ium processo que está ocioso (dormindo por mais de 20 segundos) Rum processo executável Sum processo que está dormindo por menos de 20 segundos Tum processo parado Uum processo em espera ininterrupta Zum processo morto (um zumbi )
+
+Se você tiver mais de uma letra, a segunda representa informações adicionais, que podem ser muito técnicas.
+
+É comum ter +o que indica que o processo está em primeiro plano em seu terminal. ssignifica que o processo é um líder de sessão .
+
+TIMEnos diz há quanto tempo o processo está em execução.
+
+top
+O top comando é usado para exibir informações dinâmicas em tempo real sobre processos em execução no sistema.
+kill
+HUPsignifica desligar . É enviado automaticamente quando uma janela de terminal que iniciou um processo é fechada antes de terminar o processo.
+
+INTsignifica interromper , e envia o mesmo sinal usado quando pressionamos ctrl-Cno terminal, o que geralmente encerra o processo.
+
+KILLnão é enviado para o processo, mas para o kernel do sistema operacional, que imediatamente interrompe e encerra o processo.
+
+TERMsignifica terminar . O processo receberá e terminará a si mesmo. É o sinal padrão enviado por kill.
+
+CONTsignifica continuar . Pode ser usado para retomar um processo parado.
+
+STOPnão é enviado para o processo, mas para o kernel do sistema operacional, que imediatamente interrompe (mas não encerra) o processo.
+
+Você pode ver números usados ​​em vez disso, como kill -1 <PID>. Neste caso,
+
+1corresponde a HUP. 2corresponde a INT. 9corresponde a KILL. 15corresponde a TERM. 18corresponde a CONT. 15corresponde a STOP.
+
+ 
+
+
+ 
+
+
+
+
+
