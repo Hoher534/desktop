@@ -1,0 +1,18 @@
+'Iniciando primeiros comandos do Git...
+git config --global user.name "Hoher534"
+git config --global user.email "leandrohoher75@outlook.com"
+git config  user.name
+git config user.email
+git config core.editor
+git config --global core.editor"code"
+git init
+git status
+ls
+ls -a
+touch a.txt b.txt
+git status
+git add
+git commit -m "criando arquivo a.txt b.txt"
+git log
+
+
